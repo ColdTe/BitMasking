@@ -7,6 +7,10 @@ constexpr std::string_view checkBit(const std::uint8_t x, const std::uint8_t y) 
 	return (x & y) ? "Bit is on\n" : "Bit is off";
 }
 
+void turnOn(std::uint8_t &x, std::uint8_t y) {
+	x |= y;
+}
+
 //Turn Off the BIT
 void turnOff(std::uint8_t &x,const std::uint8_t y) {
 	x &= ~y;
@@ -32,4 +36,5 @@ int main() {
 	std::cout << checkBit(flags, mask0);
 	turnOff(flags, mask0);
 	flipBit(flags, mask2);
+	turnOn(flags, mask0);
 }
